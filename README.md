@@ -1,3 +1,24 @@
+This minimalist template is meant to loosely follow nf-core guidelines without fully adhering to the open-source policy.
+It was created using nf-core create while skipping a maximum of steps, then by removing the modules and as many non-generic options as possible.
+
+Note that nf-core lint requires at least one nf-core module to be installed in order to work. If you would like a version of the template that works with lint, check out the [multiqc branch] (https://github.com/FelixAntoineLeSieur/ferlab-template-nfcore/pull/1).
+
+### Once you have cloned the template, you will need to:
+- Replace all instances of "template-nfcore" with the name of your pipeline, including the filename in the workflow directory. 
+- Install modules with either:
+1. `nf-core module install [moduleName]` (see https://nf-co.re/modules/)
+2. `nf-core create module` and follow the steps
+
+- Make sure to use `include {[process_name]} from [module_path]` where needed (most likely your main workflow).
+
+- For every parameter used in the module, make sure to include them in nextflow.config.
+- Next, use `nf-core schema build` to incorporate every new parameter to the nextflow_schema.json, along with any description, help info and restriction needed.
+- Ideally, use `nf-core lint`. If needed, add the required tests to ignore in .nf-core.yml.
+- Create your own repo and push your pipeline. 
+- Modify Changelog, readme, and make sure to path to your repo instead of here. 
+
+
+
 ## Introduction
 
 **ferlab/template** is a bioinformatics pipeline that ...
