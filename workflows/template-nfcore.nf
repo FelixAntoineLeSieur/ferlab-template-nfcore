@@ -6,7 +6,7 @@
 
 include { paramsSummaryMap       } from 'plugin/nf-validation'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_template_pipeline'
+include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_template-nfcore_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -14,7 +14,7 @@ include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_temp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-workflow TEMPLATE {
+workflow TEMPLATE-NFCORE {
 
     take:
     ch_samplesheet // channel: samplesheet read in from --input
