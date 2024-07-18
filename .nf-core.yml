@@ -26,6 +26,7 @@ lint:
   - assets/email_template.html
   - assets/email_template.txt
   - assets/sendmail_template.txt
+  - CITATIONS.md
   files_unchanged:
   - CODE_OF_CONDUCT.md
   - assets/nf-core-template_logo_light.png
@@ -41,8 +42,7 @@ lint:
   - .github/CONTRIBUTING.md
   - .github/.dockstore.yml
   - .github/ISSUE_TEMPLATE/bug_report.yml
-  multiqc_config:
-  - report_comment
+  multiqc_config: False
   nextflow_config:
   - manifest.name
   - manifest.homePage
