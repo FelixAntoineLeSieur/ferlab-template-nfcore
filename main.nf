@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ferlab/template
+    ferlab/template-nfcore-nfcore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/ferlab/template
+    Github : https://github.com/ferlab/template-nfcore
 ----------------------------------------------------------------------------------------
 */
 
@@ -15,9 +15,9 @@ nextflow.enable.dsl = 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { TEMPLATE  } from './workflows/template'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_template_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_template_pipeline'
+include { TEMPLATE-NFCORE  } from './workflows/template-nfcore'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_template-nfcore_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_template-nfcore_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +28,7 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_temp
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow FERLAB_TEMPLATE {
+workflow FERLAB_TEMPLATE-NFCORE {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -38,12 +38,12 @@ workflow FERLAB_TEMPLATE {
     //
     // WORKFLOW: Run pipeline
     //
-    TEMPLATE (
+    TEMPLATE-NFCORE (
         samplesheet
     )
 
     emit:
-    multiqc_report = TEMPLATE.out.multiqc_report // channel: /path/to/multiqc_report.html
+    multiqc_report = TEMPLATE-NFCORE.out.multiqc_report // channel: /path/to/multiqc_report.html
 
 }
 /*
@@ -72,7 +72,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    FERLAB_TEMPLATE (
+    FERLAB_TEMPLATE-NFCORE (
         PIPELINE_INITIALISATION.out.samplesheet
     )
 

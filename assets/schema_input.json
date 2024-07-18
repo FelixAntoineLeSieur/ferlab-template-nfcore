@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/ferlab/template/master/assets/schema_input.json",
-    "title": "ferlab/template pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/ferlab/template-nfcore/master/assets/schema_input.json",
+    "title": "ferlab/template-nfcore pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {

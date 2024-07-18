@@ -1,6 +1,6 @@
 ## Introduction
 
-**ferlab/template** is a bioinformatics pipeline that ...
+**ferlab/template-nfcore** is a bioinformatics pipeline that ...
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
@@ -29,7 +29,7 @@ Now, you can run the pipeline using:
 <!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
-nextflow run ferlab/template \
+nextflow run ferlab/template-nfcore \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
@@ -41,7 +41,7 @@ nextflow run ferlab/template \
 
 ## Credits
 
-ferlab/template was originally written by me.
+ferlab/template-nfcore was originally written by me.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 

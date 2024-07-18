@@ -1,4 +1,4 @@
-# ferlab/template: Output
+# ferlab/template-nfcore: Output
 
 ## Introduction
 

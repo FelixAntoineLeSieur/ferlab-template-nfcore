@@ -1,5 +1,5 @@
 //
-// Subworkflow with functionality specific to the ferlab/template pipeline
+// Subworkflow with functionality specific to the ferlab/template-nfcore pipeline
 //
 
 /*
