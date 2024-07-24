@@ -1,5 +1,5 @@
 //
-// Subworkflow with utility functions specific to the nf-core pipeline template-nfcore
+// Subworkflow with utility functions specific to the nf-core pipeline mypipeline
 //
 
 import org.yaml.snakeyaml.Yaml

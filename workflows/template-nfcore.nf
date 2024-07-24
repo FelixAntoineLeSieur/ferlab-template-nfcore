@@ -12,7 +12,7 @@ include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-workflow TEMPLATE-NFCORE {
+workflow MYPIPELINE {
 
     take:
     ch_samplesheet // channel: samplesheet read in from --input

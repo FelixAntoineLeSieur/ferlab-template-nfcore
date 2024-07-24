@@ -1,10 +1,10 @@
 This minimalist template is meant to loosely follow nf-core guidelines without fully adhering to the open-source policy.
 It was created using nf-core create while skipping a maximum of steps, then by removing the modules and as many non-generic options as possible.
 
-Note that nf-core lint requires at least one nf-core module to be installed in order to work. If you would like a version of the template that works with lint, check out the [multiqc branch] (https://github.com/FelixAntoineLeSieur/ferlab-template-nfcore/pull/1).
+Note that nf-core lint requires at least one nf-core module to be installed in order to work. If you would like a version of the template that works with lint, check out the [multiqc branch] (https://github.com/FelixAntoineLeSieur/ferlab-mypipeline/pull/1).
 
 ### Once you have cloned the template, you will need to:
-- Replace all instances of "template-nfcore" with the name of your pipeline, including the filename in the workflow directory. 
+- Replace all instances of "mypipeline" with the name of your pipeline, including the filename in the workflow directory. 
 - Install modules with either:
 1. `nf-core module install [moduleName]` (see https://nf-co.re/modules/)
 2. `nf-core create module` and follow the steps
@@ -21,7 +21,7 @@ Note that nf-core lint requires at least one nf-core module to be installed in o
 
 ## Introduction
 
-**ferlab/template-nfcore** is a bioinformatics pipeline that ...
+**ferlab/mypipeline** is a bioinformatics pipeline that ...
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
@@ -50,7 +50,7 @@ Now, you can run the pipeline using:
 <!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
-nextflow run ferlab/template-nfcore \
+nextflow run ferlab/mypipeline \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
@@ -62,7 +62,7 @@ nextflow run ferlab/template-nfcore \
 
 ## Credits
 
-ferlab/template-nfcore was originally written by me.
+ferlab/mypipeline was originally written by me.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 

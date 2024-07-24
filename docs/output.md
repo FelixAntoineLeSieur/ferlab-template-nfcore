@@ -1,4 +1,4 @@
-# ferlab/template-nfcore: Output
+# ferlab/mypipeline: Output
 
 ## Introduction
 

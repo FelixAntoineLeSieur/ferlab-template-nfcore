@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ferlab/template-nfcore-nfcore
+    ferlab/mypipeline-nfcore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/ferlab/template-nfcore
+    Github : https://github.com/ferlab/mypipeline
 ----------------------------------------------------------------------------------------
 */
 
@@ -15,9 +15,9 @@ nextflow.enable.dsl = 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { TEMPLATE-NFCORE  } from './workflows/template-nfcore'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_template-nfcore_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_template-nfcore_pipeline'
+include { MYPIPELINE  } from './workflows/mypipeline'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_mypipeline_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_mypipeline_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +28,7 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_temp
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow FERLAB_TEMPLATE-NFCORE {
+workflow FERLAB_MYPIPELINE {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -38,12 +38,12 @@ workflow FERLAB_TEMPLATE-NFCORE {
     //
     // WORKFLOW: Run pipeline
     //
-    TEMPLATE-NFCORE (
+    MYPIPELINE (
         samplesheet
     )
 
     emit:
-    multiqc_report = TEMPLATE-NFCORE.out.multiqc_report // channel: /path/to/multiqc_report.html
+    multiqc_report = MYPIPELINE.out.multiqc_report // channel: /path/to/multiqc_report.html
 
 }
 /*
@@ -72,7 +72,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    FERLAB_TEMPLATE-NFCORE (
+    FERLAB_MYPIPELINE (
         PIPELINE_INITIALISATION.out.samplesheet
     )
 
