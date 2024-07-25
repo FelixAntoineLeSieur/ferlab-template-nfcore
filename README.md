@@ -4,15 +4,17 @@ It was created using nf-core create while skipping a maximum of steps, then by r
 Note that nf-core lint requires at least one nf-core module to be installed in order to work. If you would like a version of the template that works with lint, check out the [multiqc branch] (https://github.com/FelixAntoineLeSieur/ferlab-template-nfcore/pull/1).
 
 ### Once you have cloned the template, you will need to:
-- Replace all instances of "template-nfcore" with the name of your pipeline, including the filename in the workflow directory. 
+- Replace all instances of "template-nfcore" with the name of your pipeline, including the filename in the workflow directory.
+- Make sure your input file samplesheet follows the validation described in `assets/schema_input.json`. Right now, it follows the sample sheet requirement from [nf-core/sarek](https://github.com/nf-core/sarek/blob/master/assets/schema_input.json), which accepts many file types.
+- Create the input channel from your samplesheet. The validation of your samplesheet and the creation of the input channel occurs in the `PIPELINE_INITIALISATION` process which is defined in `subworkflows/local/utils_nfcore_mypipeline_pipeline/main.nf`
 - Install modules with either:
 1. `nf-core module install [moduleName]` (see https://nf-co.re/modules/)
 2. `nf-core create module` and follow the steps
 
 - Make sure to use `include {[process_name]} from [module_path]` where needed (most likely your main workflow).
-
 - For every parameter used in the module, make sure to include them in nextflow.config.
 - Next, use `nf-core schema build` to incorporate every new parameter to the nextflow_schema.json, along with any description, help info and restriction needed.
+- You should make sure the pipeline can run with `-profile test`, by providing a small set of data on which the pipeline can run. Nf-core provides sets of [test-data you can link to](https://github.com/nf-core/test-datasets)
 - Ideally, use `nf-core lint`. If needed, add the required tests to ignore in .nf-core.yml.
 - Create your own repo and push your pipeline. 
 - Modify Changelog, readme, and make sure to path to your repo instead of here. 
