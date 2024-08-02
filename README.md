@@ -5,7 +5,7 @@ Note that nf-core lint requires at least one nf-core module to be installed in o
 
 ### Once you have cloned the template, you will need to:
 - Replace all instances of "mypipeline" with the name of your pipeline, including the filename in the workflow directory. 
-- Make sure your input file samplesheet follows the validation described in `assets/schema_input.json`. Right now, it follows the sample sheet requirement from [nf-core/sarek](https://github.com/nf-core/sarek/blob/master/assets/schema_input.json), which accepts many file types.
+- Make sure your input file samplesheet follows the validation described in `assets/schema_input.json`. Right now, it follows the sample sheet requirement from [nf-core/sarek](https://github.com/nf-core/sarek/blob/master/assets/schema_input.json), which you will need to adapt to your own samplesheet (See [here](https://www.notion.so/ferlab/Nf-core-schema-input-and-parsing-Samplesheet-files-29603f232c7f4f018fc337f2d1d16a4c) for help with modifying the schema_input.json and parsing your data).
 - Create the input channel from your samplesheet. The validation of your samplesheet and the creation of the input channel occurs in the `PIPELINE_INITIALISATION` process which is defined in `subworkflows/local/utils_nfcore_mypipeline_pipeline/main.nf`
 - Install modules with either:
 1. `nf-core module install [moduleName]` (see https://nf-co.re/modules/)
